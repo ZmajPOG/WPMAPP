@@ -18,9 +18,9 @@ A typing speed test application inspired by MonkeyType, built with Java in Andro
 
 ## Screenshots
 
-<img src="screenshots/screenshot1.png" alt="Main" width="250">
-<img src="screenshots/screenshot2.png" alt="Typing test" width="250">
-<img src="screenshots/screenshot3.png" alt="Test History" width="250">
+<img src="screenshots/screenshot1.jpg" alt="Main" width="250">
+<img src="screenshots/screenshot2.jpg" alt="Typing test" width="250">
+<img src="screenshots/screenshot3.jpg" alt="Test History" width="250">
 
 ---
 
