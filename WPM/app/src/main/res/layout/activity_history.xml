@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_gradient_dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- App title (TypeRush) -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type"
+        android:textColor="#e0e6ef"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="24dp"
+        android:fontFamily="sans-serif-medium"/>
+
+    <TextView
+        android:id="@+id/tvTitleRush"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rush"
+        android:textColor="#8fa5c7"
+        android:textSize="30sp"
+        android:layout_marginTop="32dp"
+        android:layout_toEndOf="@id/tvTitle"
+        android:layout_alignTop="@id/tvTitle"
+        android:fontFamily="sans-serif-medium"/>
+
+    <!-- History label -->
+    <TextView
+        android:id="@+id/tvHistoryLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:textColor="#B3BEDC"
+        android:textSize="18sp"
+        android:layout_below="@id/tvTitle"
+        android:layout_alignStart="@id/tvTitle"
+        android:layout_marginTop="28dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif"/>
+
+    <!-- Card/box for attempts -->
+    <LinearLayout
+        android:id="@+id/historyBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvHistoryLabel"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/history_box_bg"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:gravity="top">
+        <!-- Attempts will be added dynamically in Java -->
+    </LinearLayout>
+
+    <!-- Bottom navigation bar (Play, History only for now) -->
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#1a2230"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+    </LinearLayout>
+</RelativeLayout>

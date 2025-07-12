@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/rootLayout"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    android:background="#87ceeb"
+
+    >
+
+    //android:background="@drawable/gradient_sky_space"
+
+
+
+    <!-- Rocket area (centered horizontally, lower on screen) -->
+    <FrameLayout
+        android:id="@+id/rocketArea"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp">
+
+        <!-- Exhaust below rocket, centered -->
+        <ImageView
+            android:id="@+id/ivRocket"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_gravity="center"
+            android:contentDescription="Rocket"
+            android:src="@drawable/rocket" />
+
+        <ImageView
+            android:id="@+id/ivExhaust"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginTop="65dp"
+            android:visibility="gone"
+            android:src="@drawable/exhaust"
+            android:contentDescription="Exhaust" />
+    </FrameLayout>
+
+    <!-- Stats row -->
+    <LinearLayout
+        android:id="@+id/statsRow"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rocketArea"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time: 60s"
+            android:textSize="20sp"
+            android:layout_marginEnd="24dp"
+            android:textColor="#ffffff"
+            android:shadowColor="#222222"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+
+        <TextView
+            android:id="@+id/tvWpm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WPM: 0"
+            android:textSize="20sp"
+            android:layout_marginEnd="24dp"
+            android:textColor="#ffffff"
+            android:shadowColor="#222222"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+
+        <TextView
+            android:id="@+id/tvAcc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acc: 100%"
+            android:textSize="20sp"
+            android:layout_marginEnd="24dp"
+            android:textColor="#ffffff"
+            android:shadowColor="#222222"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+
+        <TextView
+            android:id="@+id/tvErr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Err: 0"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:shadowColor="#222222"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"/>
+    </LinearLayout>
+
+    <!-- Words area, much lower on the screen -->
+    <TextView
+        android:id="@+id/tvWords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/statsRow"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:text="words will appear here"
+        android:textSize="28sp"
+        android:textColor="#fff"
+        android:textStyle="bold"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="4"/>
+
+    <!-- Typing Input, very visible, dark on light -->
+    <EditText
+        android:id="@+id/etInput"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvWords"
+        android:layout_centerHorizontal="true"
+        android:hint="Type here"
+        android:textColor="#181c1f"
+        android:textColorHint="#cccccc"
+        android:textSize="22sp"
+        android:background="@drawable/rounded_edittext"
+        android:singleLine="true"
+        android:imeOptions="actionDone"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp"
+        />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etInput"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textSize="19sp"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:shadowColor="#000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="3"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/btnRestart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Restart"
+        android:layout_below="@id/tvResult"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Share"
+        android:layout_below="@id/btnRestart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/rounded_button"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:visibility="gone"/>
+
+    <View
+        android:id="@+id/bgOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.0"
+        android:background="#000" />
+
+</RelativeLayout>
